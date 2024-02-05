@@ -1,4 +1,4 @@
-module github.com/j2gg0s/kserver
+module github.com/j2gg0s/godefault
 
 go 1.21.4
 
