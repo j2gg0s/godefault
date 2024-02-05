@@ -95,3 +95,14 @@ type Defaulted struct {
 ```
 更多用例请参考 [examples](./examples/_output_tests), 其中
 `type.go` 为结构体定义,`zz_generated.go` 为生成的默认函数.
+
+## 安装
+```shell
+go install github.com/j2gg0s/godefault/cmd/godefault@latest
+```
+
+## 生成
+以 [examples/_output_tests](./examples/_output_tests) 为例:
+```shell
+godefault -i github.com/j2gg0s/godefault/examples/output_tests/... -o . --trim-path-prefix=github.com/j2gg0s/godefault/examples/output_tests
+```

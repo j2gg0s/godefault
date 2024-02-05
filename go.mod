@@ -18,4 +18,4 @@ require (
 	k8s.io/klog/v2 v2.80.1 // indirect
 )
 
-replace k8s.io/gengo => ../../../k8s.io/gengo
+replace k8s.io/gengo => ./vendor/k8s.io/gengo
