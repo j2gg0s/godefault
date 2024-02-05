@@ -15,7 +15,7 @@
 
 type Defaulted struct {
 ```
-注意此时改行注释后必须紧跟空行.
+注意此时注释后必须紧跟空行.
 
 如果 tag 的值是其他内容, 则代表某个字段名, 工具会为所有包含这个字段的结构体生成默认函数.
 ```go
@@ -96,13 +96,19 @@ type Defaulted struct {
 更多用例请参考 [examples](./examples/_output_tests), 其中
 `type.go` 为结构体定义,`zz_generated.go` 为生成的默认函数.
 
+你也可以通过预先定义对应函数完全自定义结构体的默认逻辑.
+
 ## 安装
 ```shell
 git clone https://github.com/j2gg0s/godefault.git && cd godefault && go install .
 ```
 
 ## 生成
-以 [examples/_output_tests](./examples/_output_tests) 为例:
+以 [examples/_output_tests](./examples/_output_tests) 为例, type.go 为结构体定义, zz_generated.default.go 为生成的默认函数, default.go 为用户自定义的默认函数.
 ```shell
+cd examples/_output_tests
+git ls-files -cmo --exclude-standard ':!:vendor/*' -z ':(glob)**'/"zz_generated.defaults.go" | xargs -0 rm -f 
 godefault -i github.com/j2gg0s/godefault/examples/output_tests/... -o . --trim-path-prefix=github.com/j2gg0s/godefault/examples/output_tests
 ```
+
+建议在生成之前先删除之前生成的文件, 避免 godefault 将上次生成的结果视作主动提供的默认实现.
