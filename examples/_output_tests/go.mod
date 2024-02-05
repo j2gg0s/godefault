@@ -22,4 +22,4 @@ require (
 
 replace github.com/j2gg0s/godefault => ../../
 
-replace k8s.io/gengo => ../../vendor/k8s.io/gengo
+replace k8s.io/gengo => ../../staging/k8s.io/gengo

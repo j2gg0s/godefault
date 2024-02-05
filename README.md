@@ -98,7 +98,7 @@ type Defaulted struct {
 
 ## 安装
 ```shell
-go install github.com/j2gg0s/godefault/cmd/godefault@latest
+go install github.com/j2gg0s/godefault@latest
 ```
 
 ## 生成
